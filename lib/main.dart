@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
+import 'pages/booking_page.dart';
+import 'pages/parking_lot_detail_page.dart';
+import 'pages/map_page.dart';
+import 'pages/points_page.dart';
+import 'pages/profile_page.dart';
 
 void main() {
 	runApp(const ParkEasyApp());
@@ -18,7 +23,15 @@ class ParkEasyApp extends StatelessWidget {
 				useMaterial3: true,
 				fontFamily: 'Sukhumvit', // Assuming common Thai font or fallback to default
 			),
-			home: const HomePage(),
+			initialRoute: '/',
+			routes: {
+				'/': (context) => const HomePage(),
+				'/booking': (context) => const BookingPage(),
+				'/map': (context) => const MapPage(),
+				'/points': (context) => const PointsPage(),
+				'/profile': (context) => const ProfilePage(),
+				'/parking_detail': (context) => const ParkingLotDetailPage(),
+			},
 		);
 	}
 }
