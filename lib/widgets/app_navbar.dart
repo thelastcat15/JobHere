@@ -1,0 +1,31 @@
+import 'package:flutter/material.dart';
+
+class AppNavBar extends StatelessWidget {
+  final int currentIndex;
+  final ValueChanged<int>? onTap;
+
+  const AppNavBar({
+    Key? key,
+    this.currentIndex = 0,
+    this.onTap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      selectedItemColor: Colors.deepPurple,
+      unselectedItemColor: Colors.grey,
+      showUnselectedLabels: true,
+      currentIndex: currentIndex,
+      onTap: onTap,
+      items: const [
+        BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: 'หน้าแรก'),
+        BottomNavigationBarItem(icon: Icon(Icons.calendar_month), label: 'จอง'),
+        BottomNavigationBarItem(icon: Icon(Icons.map_outlined), label: 'แผนที่'),
+        BottomNavigationBarItem(icon: Icon(Icons.star_border), label: 'แต้ม'),
+        BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'โปรไฟล์'),
+      ],
+    );
+  }
+}
