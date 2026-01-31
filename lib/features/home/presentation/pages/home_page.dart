@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'booking_page.dart';
-import '../widgets/app_navbar.dart';
+import '../../../booking/presentation/pages/booking_page.dart';
+import '../../../../widgets/app_navbar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

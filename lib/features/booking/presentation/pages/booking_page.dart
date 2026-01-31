@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'parking_lot_detail_page.dart';
+import '../../../map/presentation/widgets/parking_lot_detail_page.dart';
 
 class BookingPage extends StatelessWidget {
   const BookingPage({super.key});

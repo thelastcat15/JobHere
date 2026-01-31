@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'pages/home_page.dart';
-import 'pages/booking_page.dart';
-import 'pages/map_page.dart';
-import 'pages/points_page.dart';
-import 'pages/profile_page.dart';
+import 'features/home/presentation/pages/home_page.dart';
+import 'features/booking/presentation/pages/booking_page.dart';
+import 'features/map/presentation/pages/map_page.dart';
+import 'features/points/presentation/pages/points_page.dart';
+import 'features/profile/presentation/pages/profile_page.dart';
 
 void main() {
 	runApp(const ParkEasyApp());

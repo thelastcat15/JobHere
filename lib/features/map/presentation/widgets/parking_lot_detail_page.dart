@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widgets/app_navbar.dart';
+import '../../../../widgets/app_navbar.dart';
 
 class ParkingLotDetailPage extends StatefulWidget {
   final String name;
