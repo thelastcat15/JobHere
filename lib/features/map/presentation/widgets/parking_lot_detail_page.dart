@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../widgets/app_navbar.dart';
+import '../../../../shared/widgets/app_navbar.dart';
 
 class ParkingLotDetailPage extends StatefulWidget {
   final String name;
@@ -23,7 +23,6 @@ class ParkingLotDetailPage extends StatefulWidget {
 
 class _ParkingLotDetailPageState extends State<ParkingLotDetailPage> {
   String _selectedZone = 'A';
-  String? _selectedSpot;
   
   // Booking details (mock data)
   final String _checkInDate = '15/03/25';
@@ -196,9 +195,6 @@ class _ParkingLotDetailPageState extends State<ParkingLotDetailPage> {
                       return GestureDetector(
                         onTap: isAvailable
                             ? () {
-                                setState(() {
-                                  _selectedSpot = spot['number'];
-                                });
                                 _showBookingOverlay(spot['number']);
                               }
                             : null,
@@ -498,10 +494,5 @@ class _ParkingLotDetailPageState extends State<ParkingLotDetailPage> {
         );
       },
     );
-
-    // Clear temporary selection after the sheet is closed so next tap opens immediately
-    if (mounted) {
-      setState(() => _selectedSpot = null);
-    }
   }
 }

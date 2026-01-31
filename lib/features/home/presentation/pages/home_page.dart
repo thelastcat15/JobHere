@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../booking/presentation/pages/booking_page.dart';
-import '../../../../widgets/app_navbar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,72 +8,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    final pages = [
-      _homeContent(),
-      const BookingPage(),
-      // placeholders for other tabs
-      Center(child: Text('แผนที่', style: Theme.of(context).textTheme.titleLarge)),
-      Center(child: Text('แต้ม', style: Theme.of(context).textTheme.titleLarge)),
-      Center(child: Text('โปรไฟล์', style: Theme.of(context).textTheme.titleLarge)),
-    ];
-
-    return Scaffold(
-      backgroundColor: Colors.grey[50],
-      appBar: AppBar(
-        backgroundColor: Colors.deepPurple[800],
-        elevation: 0,
-        title: Row(
-          children: [
-            Container(
-              padding: const EdgeInsets.all(4),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: const Icon(Icons.local_parking, color: Colors.deepPurple, size: 20),
-            ),
-            const SizedBox(width: 8),
-            const Text(
-              'ParkEasy',
-              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
-            ),
-          ],
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.notifications_none, color: Colors.white),
-            onPressed: () {},
-          ),
-        ],
-      ),
-      body: pages[_selectedIndex],
-      bottomNavigationBar: AppNavBar(
-        currentIndex: _selectedIndex,
-        onTap: (i) {
-          if (i == 0 || i == 1) {
-            setState(() => _selectedIndex = i);
-            return;
-          }
-
-          // Map other tabs to named routes
-          final routeNames = {
-            2: '/map',
-            3: '/points',
-            4: '/profile',
-          };
-
-          final route = routeNames[i];
-          if (route != null) Navigator.pushNamed(context, route);
-        },
-      ),
-    );
-  }
-
-  Widget _homeContent() {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -100,7 +35,7 @@ class _HomePageState extends State<HomePage> {
           _buildRecentActivityItem('จอดที่จอด Siam Paragon', '23 ธ.ค. 2025 • +25 แต้ม', '฿200', '5 ชม.'),
           _buildRecentActivityItem('จอดรถที่ MBK Center', '22 ธ.ค. 2025 • +30 แต้ม', '฿80', '2 ชม.'),
         ],
-      ),
+      )
     );
   }
 
@@ -176,7 +111,7 @@ class _HomePageState extends State<HomePage> {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.03),
+            color: Colors.black.withValues(alpha: 0.03),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -215,7 +150,7 @@ class _HomePageState extends State<HomePage> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
-        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 5)],
+        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 5)],
       ),
       child: Row(
         children: [
@@ -317,7 +252,7 @@ class _HomePageState extends State<HomePage> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
-        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 10, offset: const Offset(0, 4))],
+        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 10, offset: const Offset(0, 4))],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -421,7 +356,7 @@ class _HomePageState extends State<HomePage> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
-        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 5)],
+        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.02), blurRadius: 5)],
       ),
       child: Row(
         children: [

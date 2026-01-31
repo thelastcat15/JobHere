@@ -5,10 +5,10 @@ class AppNavBar extends StatelessWidget {
   final ValueChanged<int>? onTap;
 
   const AppNavBar({
-    Key? key,
+    super.key,
     this.currentIndex = 0,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
