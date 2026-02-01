@@ -1,21 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../../../shared/widgets/app_navbar.dart';
 
 class ParkingLotDetailPage extends StatefulWidget {
-  final String name;
-  final String location;
-  final String distance;
-  final String price;
-  final double rating;
+  final String parkingId;
 
-  const ParkingLotDetailPage({
-    super.key,
-    required this.name,
-    required this.location,
-    required this.distance,
-    required this.price,
-    required this.rating,
-  });
+  const ParkingLotDetailPage({super.key, required this.parkingId});
 
   @override
   State<ParkingLotDetailPage> createState() => _ParkingLotDetailPageState();
@@ -254,7 +242,6 @@ class _ParkingLotDetailPageState extends State<ParkingLotDetailPage> {
           ],
         ),
       ),
-      bottomNavigationBar: const AppNavBar(currentIndex: 1),
     );
   }
 
