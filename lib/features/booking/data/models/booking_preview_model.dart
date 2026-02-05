@@ -2,7 +2,7 @@ import 'package:jodhere/features/booking/domain/entities/booking_preview.dart';
 import 'package:jodhere/features/booking/data/models/parking_spot_model.dart';
 
 class BookingPreviewModel extends BookingPreview {
-  BookingPreviewModel({
+  const BookingPreviewModel({
     required super.ratePerHour,
     required super.otherFee,
     required List<ParkingSpotModel> spots,

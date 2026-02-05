@@ -7,13 +7,13 @@ abstract class BookingException implements Exception {
 }
 
 class InvalidParkingIdException extends BookingException {
-  InvalidParkingIdException(String message) : super(message);
+  InvalidParkingIdException(super.message);
 }
 
 class BookingNotFoundExceptionException extends BookingException {
-  BookingNotFoundExceptionException(String message) : super(message);
+  BookingNotFoundExceptionException(super.message);
 }
 
 class BookingRepositoryException extends BookingException {
-  BookingRepositoryException(String message) : super(message);
+  BookingRepositoryException(super.message);
 }

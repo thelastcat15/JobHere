@@ -3,6 +3,7 @@ import 'package:jodhere/features/booking/data/datasources/booking_mock_datasourc
 import 'package:jodhere/features/booking/data/repositories/booking_repository_impl.dart';
 import 'package:jodhere/features/booking/domain/entities/booking_preview.dart';
 import 'package:jodhere/features/booking/domain/usecases/get_booking_preview.dart';
+import 'package:jodhere/features/booking/domain/value_objects/parking_id.dart';
 import 'package:jodhere/features/booking/presentation/widgets/booking_summary_sheet.dart';
 
 class ParkingBookingPage extends StatefulWidget {
@@ -34,7 +35,7 @@ class _ParkingBookingPageState extends State<ParkingBookingPage> {
     return Scaffold(
       appBar: AppBar(title: const Text('เลือกที่จอด')),
       body: FutureBuilder<BookingPreview>(
-        future: _getPreview(widget.parkingId),
+        future: _getPreview(ParkingId(widget.parkingId)),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
